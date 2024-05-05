@@ -1,1 +1,1 @@
-Customer Segmentation
+<strong>Customer Segmentation</strong>
