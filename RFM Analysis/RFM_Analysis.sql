@@ -72,93 +72,49 @@ from RFM_scores;
 
 -- categorize numbers from customers
 
--- Champions [4][4][4]
-select *
-from RFM_segments
-where "RFM_score"=12;
+-- '[3-4][3-4]4': 'VIP',
+-- '[2-3-4][1-2-3-4]4': 'Top Recent',
+-- '1[1-2-3-4]4': 'Top at Risk ',
+-- '[3-4][3-4]3': 'High Promising',
+-- '[2-3-4][1-2]3': 'High New',
+-- '2[3-4]3': 'High Loyal',        
+-- '[3-4][3-4]2': 'Medium Potential',
+-- '[2-3-4][1-2]2': 'Medium New',
+-- '2[3-4]2': 'Medium Loyal',        
+-- '4[1-2-3-4]1': 'Low New',
+-- '[2-3][1-2-3-4]1': 'Low Loyal',    
+-- '1[1-2-3-4][1-2-3]': 'Need Activation'
+create view labels as 
+SELECT *,
+CASE
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (3,4) and "frequency_score" in (3,4) and "monetary_score" = 4) THEN 'VIP'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (2,3,4) and "frequency_score" in (1,2,3,4) and "monetary_score" = 4) THEN 'Top Recent'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 1 and "frequency_score" in (1,2,3,4) and "monetary_score" = 4) THEN 'Top at Risk'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (3,4) and "frequency_score" in (3,4) and "monetary_score" = 3) THEN 'High Promising'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (2,3,4) and "frequency_score" in (1,2) and "monetary_score" = 3) THEN 'High New'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 2 and "frequency_score" in (3,4) and "monetary_score" = 3) THEN 'High Loyal'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (3,4) and "frequency_score" in (3,4) and "monetary_score" = 2) THEN 'Medium Potential'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (2,3,4) and "frequency_score" in (1,2) and "monetary_score" = 2) THEN 'Medium New'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 2 and "frequency_score" in (3,4) and "monetary_score" = 2) THEN 'Medium Loyal'  
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 4 and "frequency_score" in (1,2,3,4) and "monetary_score" = 1) THEN 'Low New'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" in (2,3) and "frequency_score" in (1,2,3,4) and "monetary_score" = 1) THEN 'Low Loyal'
+  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 1 and "frequency_score" in (1,2,3,4) and "monetary_score" in (1,2,3)) THEN 'Need Activation'  
+END as "segment"
+FROM fact_sales; 
 
-select *
-from fact_sales
-where "Customer ID" in
-(select "Customer ID"
-from RFM_segments
-where "RFM_score"=12);
+-- Calculate customers per segment and stats per segment
+select "segment",
+	round(cast(sum("Sales") as numeric),2) as "Total Monetary",
+	count("segment") as "Total_Customers",
+	round(cast(avg(cast("recency" as numeric)) as numeric),2) as "Mean_recency",
+	(sum("Sales")/1250704)*100 as "Monetary %",
+	round((count(distinct("Customer ID"))::decimal/3143)*100,3)  as "Customers %"	
+from labels
+group by "segment"
+order by "Total Monetary" desc;
 
-
--- Potential Loyalists [4][2-3][3]
-select *
-from RFM_segments
-where "recency_score" = 4
-and "frequency_score">=2 and "frequency_score"<=3
-and "monetary_score"=3;
-
-select *
-from fact_sales
-where "Customer ID" in
-(select "Customer ID"
-from RFM_segments
-where "recency_score" =4
-and "frequency_score">=2 and "frequency_score"<=3
-and "monetary_score"=3);
-
--- New Customers but high overall RMF [3-4][1][2-3-4]
-select *
-from RFM_segments
-where "recency_score" >= 3
-and "frequency_score"= 1
-and "monetary_score">= 2;
-
-select *
-from fact_sales
-where "Customer ID" in
-(select "Customer ID"
-from RFM_segments
-where "recency_score" >= 3
-and "frequency_score"= 1
-and "monetary_score">= 2);
-
--- At risk customers [2][3-4][3-4] (Buy frequently, big amount but not recently)
-select *
-from RFM_segments
-where "recency_score" = 2
-and "frequency_score">=3
-and "monetary_score">= 3;
-
-select *
-from fact_sales
-where "Customer ID" in
-(select "Customer ID"
-from RFM_segments
-where "recency_score" = 2
-and "frequency_score">=3
-and "monetary_score">= 3);
-
--- Can't lose them [1][4][1-2-3-4]
-select *
-from RFM_segments
-where "recency_score" = 1
-and "frequency_score" = 4;
-
-select *
-from fact_sales
-where "Customer ID" in
-(select "Customer ID"
-from RFM_segments
-where "recency_score" = 1
-and "frequency_score" = 4);
+-- Observe that VIP and Top Recent customers (22% of customers) produce 
+-- 77.7 % of total sales 
 
 
--- 
---create view labels as 
---SELECT *,
---CASE
---  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "RFM_score"=12) THEN 'Champions'
---  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" =4 and "frequency_score">=2 and "frequency_score"<=3 and "monetary_score"=3) THEN 'Potential Loyalists'
---  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" >= 3 and "frequency_score"= 1 and "monetary_score">= 2) THEN 'New Customers'
---  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 2 and "frequency_score">=3 and "monetary_score">= 3) THEN 'At risk customers'
---  WHEN "Customer ID" in (select "Customer ID" from RFM_segments where "recency_score" = 1 and "frequency_score" = 4) THEN 'Cant lose them'
---END as "segment"
---FROM fact_sales; 
 
--- Create customer categories based on rfm score. Then create a view table as above
--- based on the customer categories.
