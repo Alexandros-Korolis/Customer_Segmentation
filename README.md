@@ -10,3 +10,9 @@ As an analyst, I've been tasked with analyzing transaction data to provide advic
 &#8226; state_region_mapping.csv contains data above locations <br>
 &#8226; Data Cleaning folder contains cleaned data of fact_sales in .csv and sql script for data cleaning <br>
 &#8226; RFM Analysis folder contains sql script for rfm analysis
+
+<h2>Exploratory Data Analysis</h2>
+&#8226; There were in total <strong>20151 transactions</strong> between <strong>2020-12-01</strong> and <strong>2021-12-09</strong>.<br>
+&#8226; Transactions were made by <strong>3143 unique customers</strong>. <br>
+
+![alt text](trans_per_cust.PNG)

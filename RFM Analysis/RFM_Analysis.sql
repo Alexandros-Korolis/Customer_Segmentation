@@ -17,6 +17,10 @@ from fact_sales
 group by "Customer ID"
 order by "transcation_count" desc;
 
+copy (select * from transactions_per_customer) to 'D:\trans_per_cust.csv'
+delimiter ','
+csv header;
+
 -- Examine total sales per product
 select "Description", sum("Sales") as "Total Sales"
 from fact_sales
