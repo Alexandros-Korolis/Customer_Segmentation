@@ -15,17 +15,16 @@ from fact_sales;
 select "Customer ID", count("Customer ID") as "transcation_count"
 from fact_sales
 group by "Customer ID"
-order by "transcation_count" desc;
+order by "transcation_count" desc
+limit 10;
 
-copy (select * from transactions_per_customer) to 'D:\trans_per_cust.csv'
-delimiter ','
-csv header;
 
 -- Examine total sales per product
 select "Description", sum("Sales") as "Total Sales"
 from fact_sales
 group by "Description"
-order by "Total Sales" desc;
+order by "Total Sales" desc
+limit 10;
 
 -- Create view RFM table.
 
