@@ -37,7 +37,12 @@ As an analyst, I've been tasked with analyzing transaction data to provide strat
 ![alt text](Segments.PNG)
 <br>
 
+<h2><strong> Customer and statistics per segment.</strong></h2>
 
+![alt text](stats.PNG)
+<br>
+<br>
+&#8226; From the table above we observe that VIP and Top Recent customers (22% of customers) produce 77.7 % of total sales. Based on the analysis, pet shop owner could focus more on the customers that belong to these target groups. <br>
 
 
 
