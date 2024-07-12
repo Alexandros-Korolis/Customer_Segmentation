@@ -34,7 +34,7 @@ As an analyst, I've been tasked with analyzing transaction data to provide strat
 
 <h2><strong> Categorize customers based on RFM score </strong></h2>
 
-![alt text](segments.PNG)
+![alt text](Segments.PNG)
 <br>
 
 
