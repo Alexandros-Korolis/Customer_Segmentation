@@ -33,7 +33,8 @@ As an analyst, I've been tasked with analyzing transaction data to provide strat
 &#8226; Monetary Score. The least money gets 1, the most money gets 4. <br>
 
 <h2><strong> Categorize customers based on RFM score </strong></h2>
-![alt text](Segments.PNG)
+
+![alt text](segments.PNG)
 <br>
 
 
