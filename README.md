@@ -23,7 +23,7 @@ As an analyst, I've been tasked with analyzing transaction data to provide strat
 
 ![alt text](sales_per_prod.PNG)
 <br>
-&#8226; <strong>RFM Analysis (steps) </strong> <br>
+<h2> <strong>RFM Analysis (steps) </strong></h2>
 &#8226; Find Recency for each customer. Take as reference date the maximum date. Lower recency values are better <br>
 &#8226; Find Frequency for each customer. Count unique number of days of purchases <br>
 &#8226; Find Monetary for each customer. Summary of Total Sales. <br>
@@ -32,6 +32,9 @@ As an analyst, I've been tasked with analyzing transaction data to provide strat
 &#8226; Frequency Score. The least frequent gets 1 and the most frequent gets 4 <br>
 &#8226; Monetary Score. The least money gets 1, the most money gets 4. <br>
 
+<h2><strong> Categorize customers based on RFM score </strong></h2>
+![alt text](Segments.PNG)
+<br>
 
 
 
