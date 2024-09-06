@@ -1,0 +1,41 @@
+123
+
+-- VIP - 
+recency - 1
+frequency - 3
+monetary - 3,2
+
+-- Loyal --
+recency - 2
+frequency - 3
+monetary - 1,2,3
+
+-- High Risk --
+recency - 3
+frequency - 1
+monetary - 1
+
+-- High Potencial -- 
+recency - 1
+frequency - 3
+monetary - 1
+
+-- Need activation -- 
+recency - 3
+frequency - 2,3
+monetary - 1,2,3
+
+-- New customers --
+recency - 1
+frequency - 1,2
+monetary - 1,2,3
+
+-- Medium potencial --
+recency - 2
+frequency - 1,2
+monetary - 1,2,3
+
+-- low potencial -- 
+recency - 3
+frequency - 1
+monetary - 2,3
