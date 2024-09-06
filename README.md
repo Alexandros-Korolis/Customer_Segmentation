@@ -17,11 +17,11 @@ As an analyst, I have been tasked with analyzing transactional data (between 202
 &#8226; report.pbix is the final report in Power BI
 
 <h2><strong>Exploratory Data Analysis</strong></h2>
-&#8226; We observe that <strong>the best-selling categories</strong> are Food and Disposables ($3.7 million and $3.6 million, respectively).
-&#8226; As for products, Earth Rated Dog Poop Bags and Pet Odor Eliminator appear to be <strong>the top-selling products</strong> ($2.7 million and $1.9 million, respectively).
-&#8226; We observe <strong>spikes in total sales</strong> around 8 AM and 12 PM.
-&#8226; The East region generates the highest sales, and while Great Falls, New York, has the highest number of orders, Sarasota brings in higher profits.
-&#8226; In the Western regions, total sales are the lowest, while the number of invoices remains relatively high.
+&#8226; We observe that <strong>the best-selling categories</strong> are Food and Disposables ($3.7 million and $3.6 million, respectively). <br>
+&#8226; As for products, Earth Rated Dog Poop Bags and Pet Odor Eliminator appear to be <strong>the top-selling products</strong> ($2.7 million and $1.9 million, respectively). <br>
+&#8226; We observe <strong>spikes in total sales</strong> around 8 AM and 12 PM. <br>
+&#8226; The East region generates the highest sales, and while Great Falls, New York, has the highest number of orders, Sarasota brings in higher profits. <br>
+&#8226; In the Western regions, total sales are the lowest, while the number of invoices remains relatively high. <br>
 
 <h2> <strong>RFM Analysis (steps) </strong></h2>
 &#8226; Find <strong>Recency</strong> for each customer. Recency means : How recently a customer made an order.Take as reference date the maximum date the dataset. Lower recency values are better <br>
