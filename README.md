@@ -35,10 +35,10 @@ As an analyst, I have been tasked with analyzing transactional data (between 202
 &#8226; Check segments.txt to get more info.
 
 <h2>Outcome and Recommendations</h2>
-&#8226; Based on RFM analysis, we observe that approximately 48% of total sales come from around 13% of customers, who belong to the Need Activation segment.
-&#8226; The Need Activation segment consists of customers who have not made recent purchases but typically buy in large quantities and spend more money.
-&#8226; Based on the above results, in order to increase the sales, the Pet Showner could target more customers that belong to the Need Activation segment.
-&#8226; Focus more on Western regions, considered that this areas perform low regarding the sales.
+&#8226; Based on RFM analysis, we observe that approximately <strong> 48% of total sales come from around 13% of customers, who belong to the Need Activation segment</strong>. <br>
+&#8226; The <strong>Need Activation segment</strong> consists of customers who <strong>have not made recent purchases but typically buy in large quantities and spend more money</strong>. <br>
+&#8226; Based on the above results, in order to increase the sales, the <strong>Pet Showner could target more customers that belong to the Need Activation segment</strong>. <br>
+&#8226; <strong>Focus more on Western regions</strong>, considered that this areas perform low regarding the sales.
 
 
 
