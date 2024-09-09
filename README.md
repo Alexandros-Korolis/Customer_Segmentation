@@ -1,5 +1,14 @@
 <h1><strong>Customer Segmentation</strong></h1>
 
+<h2><strong>Table of Contents</h2></strong>
+
+- [Report View](#report-view)
+- [Project Purpose](#project-purpose)
+- [About the Dataset](#about-the-dataset)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [RFM Analysis (steps)](#rfm-analysis-(steps))
+- [Outcome and Recommendations](#outcome-and-recommendations)
+
 <h2>Report View</h2>
 
 ![alt text](report_1.PNG)
