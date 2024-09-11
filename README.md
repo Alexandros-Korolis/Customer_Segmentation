@@ -32,14 +32,14 @@ As an analyst, I have been tasked with analyzing transactional data (between 202
 &#8226; The East region generates the highest sales, and while Great Falls, New York, has the highest number of orders, Sarasota brings in higher profits. <br>
 &#8226; In the Western regions, total sales are the lowest, while the number of invoices remains relatively high. <br>
 
-<h2> <strong>RFM Analysis (steps) </strong></h2>
-&#8226; Find <strong>Recency</strong> for each customer. Recency means : How recently a customer made an order.Take as reference date the maximum date the dataset. Lower recency values are better <br>
-&#8226; Find <strong>Frequency</strong> for each customer. How frequent a customer ordered ? Count unique number of days of purchases. <br>
-&#8226; Find <strong>Monetary</strong> for each customer. Summary of Total Sales. <br>
-&#8226; Create <strong>RFM scores</strong> based on quantiles of each distribution (recency,frequency,monetary). <br>
-&#8226; <strong>Recency Score</strong>. The nearest date gets 3, the furthest 1. <br>
-&#8226; <strong>Frequency Score</strong>. The least frequent gets 1 and the most frequent gets 3 <br>
-&#8226; <strong>Monetary Score</strong>. The least money gets 1, the most money gets 3. <br>
+<h2> <strong>RFM Analysis Explained and Steps </strong></h2>
+
+&#8226; RFM Analysis stands for Recency (How recently a customer has purchased an item), Frequency (How often he/she makes a purchase) and Monetary (How much money does he/she spends). I will assign a score based on these three attributes. For the specific case, Recency will get values between 1 and 3 (1 being the best score), Frequency will get values between 1 and 3 ( but 3 being the highest score) and the same for Monetary. Scores are based on 3 quantiles ( I could use 4 if I wanted to go more in detail ), score of 1 means it belongs in the first quantile, 2 means in the second etc.
+
+&#8226; First I will find <strong>Recency</strong> for each customer. Reference date will be the latest date appearing in the dataset. Lower recency values are better <br>
+&#8226; Afterwards calculate <strong>Frequency</strong> for each customer. I have to count the unique number of days of purchases. <br>
+&#8226; Calculate <strong>Monetary</strong> for each customer. Summ of Total Sales. <br>
+&#8226; Next, create <strong>RFM scores</strong> based on quantiles of each distribution (recency,frequency,monetary). <br>
 &#8226; Create <strong>segments</strong> based on Recency score, Frequency score and Monetary score.
 &#8226; Check segments.txt to get more info.
 
