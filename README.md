@@ -6,7 +6,7 @@
 - [Project Purpose](#project-purpose)
 - [About the Dataset](#about-the-dataset)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
-- [RFM Analysis Explained and Steps](#rfm-analysis-explained-and-steps)
+- [RFM Analysis](#rfm-analysis)
 - [Outcome and Recommendations](#outcome-and-recommendations)
 
 <h2>Report View</h2>
@@ -32,7 +32,7 @@ As an analyst, I have been tasked with analyzing transactional data (between 202
 &#8226; The East region generates the highest sales, and while Great Falls, New York, has the highest number of orders, Sarasota brings in higher profits. <br>
 &#8226; In the Western regions, total sales are the lowest, while the number of invoices remains relatively high. <br>
 
-<h2> <strong>RFM Analysis Explained and Steps </strong></h2>
+<h2> <strong>RFM Analysis</strong></h2>
 
 &#8226; RFM Analysis stands for Recency (How recently a customer has purchased an item), Frequency (How often he/she makes a purchase) and Monetary (How much money does he/she spends). I will assign a score based on these three attributes. For the specific case, Recency will get values between 1 and 3 (1 being the best score), Frequency will get values between 1 and 3 ( but 3 being the highest score) and the same for Monetary. Scores are based on 3 quantiles ( I could use 4 if I wanted to go more in detail ), score of 1 means it belongs in the first quantile, 2 means in the second etc.
 
