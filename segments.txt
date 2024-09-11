@@ -1,6 +1,6 @@
-123
 
--- VIP - 
+
+-- VIP -- 
 recency - 1
 frequency - 3
 monetary - 3,2
@@ -30,12 +30,12 @@ recency - 1
 frequency - 1,2
 monetary - 1,2,3
 
--- Medium potencial --
+-- Medium potential --
 recency - 2
 frequency - 1,2
 monetary - 1,2,3
 
--- low potencial -- 
+-- low potential -- 
 recency - 3
 frequency - 1
 monetary - 2,3
