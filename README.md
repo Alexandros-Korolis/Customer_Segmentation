@@ -36,7 +36,7 @@ As an analyst, I have been tasked with analyzing transactional data (between 202
 
 &#8226; RFM Analysis stands for Recency (How recently a customer has purchased an item), Frequency (How often he/she makes a purchase) and Monetary (How much money does he/she spends). I will assign a score based on these three attributes. For the specific case, Recency will get values between 1 and 3 (1 being the best score), Frequency will get values between 1 and 3 ( but 3 being the highest score) and the same for Monetary. Scores are based on 3 quantiles ( I could use 4 if I wanted to go more in detail ), score of 1 means it belongs in the first quantile, 2 means in the second etc.
 
-&#8226; First I will find <strong>Recency</strong> for each customer. Reference date will be the latest date appearing in the dataset. Lower recency values are better <br>
+&#8226; First I will calculate <strong>Recency</strong> for each customer. Reference date will be the latest date appearing in the dataset. Lower recency values are better <br>
 &#8226; Afterwards calculate <strong>Frequency</strong> for each customer. I have to count the unique number of days of purchases. <br>
 &#8226; Calculate <strong>Monetary</strong> for each customer. Summ of Total Sales. <br>
 &#8226; Next, create <strong>RFM scores</strong> based on quantiles of each distribution (recency,frequency,monetary). <br>
