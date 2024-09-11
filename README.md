@@ -6,7 +6,7 @@
 - [Project Purpose](#project-purpose)
 - [About the Dataset](#about-the-dataset)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
-- [RFM Analysis (steps)](#rfm-analysis-(steps))
+- [RFM Analysis Explained and Steps](#rfm-analysis-explained-and-steps)
 - [Outcome and Recommendations](#outcome-and-recommendations)
 
 <h2>Report View</h2>
